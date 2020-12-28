@@ -1,0 +1,7 @@
+{
+  "Platform" : "Android",
+  "DeviceID" : "LGD802dbf6ad95",
+  "AppPackage" : "~/Downloads/aws-test-app.apk",
+  "App" : "com.amazonaws.devicefarm.android.referenceapp",
+  "LaunchActivity" : "com.amazonaws.devicefarm.android.referenceapp.Activities.UpNavigationContent"
+}
