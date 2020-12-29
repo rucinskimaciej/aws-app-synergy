@@ -1,13 +1,14 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="MainActivity">
-<!--    <groups>-->
-<!--        <define name="enabled"/>-->
-<!--        <define name="disabled"/>-->
-<!--    </groups>-->
-    <packages>
-        <package name="online.rumac.mainActivityTest">
-            <include name="enabled"/>
-        </package>
-    </packages>
+<suite name="Activities">
+    <test name="All tests">
+        <groups>
+            <run>
+                <include name="all"/>
+                <exclude name="faulty"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="online.rumac.tests.*"/>
+        </packages>
+    </test>
 </suite>

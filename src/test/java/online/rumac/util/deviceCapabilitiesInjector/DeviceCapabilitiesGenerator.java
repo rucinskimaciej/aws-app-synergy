@@ -1,4 +1,4 @@
-package online.rumac.deviceCapabilitiesInjector;
+package online.rumac.util.deviceCapabilitiesInjector;
 
 import com.synergy.core.driver.DeviceCapabilities;
 import org.json.simple.JSONObject;
@@ -10,8 +10,8 @@ import java.io.IOException;
 
 public class DeviceCapabilitiesGenerator {
 
-    public static DeviceCapabilities fromJson(String source) {
-        JSONObject json = (JSONObject) parse(source);
+    public static DeviceCapabilities fromJson(String activityName) {
+        JSONObject json = (JSONObject) parse("src/test/resources/capabilitiesJson/" + activityName + ".json");
         DeviceCapabilities caps = new DeviceCapabilities();
         for (Object o : json.keySet()) {
             String s = (String) o;

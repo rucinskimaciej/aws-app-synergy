@@ -1,11 +1,12 @@
-package online.rumac.mainActivityTest;
+package online.rumac.tests.mainActivity;
 
 import com.synergy.core.driver.mobile.android.AndroidDeviceInfo;
+import online.rumac.tests.common.Base;
 import org.testng.annotations.Test;
 
-public class First extends BeforeAfter {
+public class MainActivityTest extends Base {
 
-    @Test(groups = {"enabled"})
+    @Test(groups = {"all"})
     void connectionTest() {
         AndroidDeviceInfo deviceInfo = driver.info().getDeviceInfo();
         try {
