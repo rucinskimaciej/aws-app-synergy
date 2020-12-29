@@ -19,6 +19,14 @@ public enum Menu {
         this.field = field;
     }
 
+    public static String getXpath(int i) {
+        return "(//android.widget.ImageView[@content-desc=\"Row Category Image\"])[" + i + "]";
+    }
+
+    public static int ofIndex(Menu menuItem) {
+        return valueOf(menuItem.toString()).ordinal() + 1;
+    }
+
     public String getField() {
         return field;
     }
