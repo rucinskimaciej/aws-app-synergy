@@ -2,7 +2,7 @@ package online.rumac.common;
 
 import com.synergy.core.driver.DeviceCapabilities;
 import com.synergy.core.driver.mobile.android.AndroidDriver;
-import online.rumac.util.deviceCapabilitiesInjector.DeviceCapabilitiesGenerator;
+import online.rumac.common.util.deviceCapabilitiesInjector.DeviceCapabilitiesGenerator;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;

@@ -1,4 +1,4 @@
-package online.rumac.util.deviceCapabilitiesInjector;
+package online.rumac.common.util.deviceCapabilitiesInjector;
 
 import com.synergy.core.driver.DeviceCapabilities;
 import org.json.simple.JSONObject;

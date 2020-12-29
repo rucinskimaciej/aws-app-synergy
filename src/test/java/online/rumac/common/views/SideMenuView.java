@@ -1,4 +1,4 @@
-package online.rumac.views;
+package online.rumac.common.views;
 
 import com.synergy.core.driver.By;
 import com.synergy.core.driver.elements.MobileElement;
