@@ -5,7 +5,7 @@ import online.rumac.common.logger.Log;
 import online.rumac.common.views.SideMenuView;
 import org.testng.annotations.Test;
 
-public class SideBarTest extends BaseSetup {
+public class SideMenuViewTest extends BaseSetup {
 
     @Test(groups = "inProgress")
     void openSideMenuBar() {
