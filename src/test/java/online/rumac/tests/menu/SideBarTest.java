@@ -9,7 +9,7 @@ public class SideBarTest extends Base {
 
     @Test(groups = "all")
     void openSideMenuBar() {
-        driver.options().setElementTimeout(5000);
+        driver.options().setElementTimeout(2000);
         MobileElement sideMenuBarButton = //driver.finder().findElement(By.AccessibilityID("ReferenceApp"));
                 driver.finder().findElement(By.ClassName("android.widget.ImageButton")); //, 0, 99, 168, 243); // <- this should work
         sideMenuBarButton.click();

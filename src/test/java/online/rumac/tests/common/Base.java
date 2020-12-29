@@ -1,11 +1,11 @@
 package online.rumac.tests.common;
 
 import online.rumac.common.BaseSetup;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeClass;
 
 public class Base extends BaseSetup {
 
-    @BeforeTest
+    @BeforeClass
     @Override
     protected void setup() {
         activityName = "MainActivity";
