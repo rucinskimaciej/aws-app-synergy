@@ -2,6 +2,7 @@ package online.rumac.tests.mainActivity;
 
 import com.synergy.core.driver.mobile.android.AndroidDeviceInfo;
 import online.rumac.common.BaseSetup;
+import online.rumac.common.logger.Log;
 import org.testng.annotations.Test;
 
 public class MainActivityTest extends BaseSetup {
@@ -9,14 +10,10 @@ public class MainActivityTest extends BaseSetup {
     @Test(groups = {"all"})
     void connectionTest() {
         AndroidDeviceInfo deviceInfo = driver.info().getDeviceInfo();
-        try {
-            System.out.println(deviceInfo.getClass().getMethod(("getAppVersion")).getName() + " : " + deviceInfo.getAppVersion());
-            System.out.println(deviceInfo.getClass().getMethod(("getAppCPUUsage")).getName() + " : " + deviceInfo.getAppCPUUsage());
-            System.out.println(deviceInfo.getClass().getMethod(("getAppMemoryUsage")).getName() + " : " + deviceInfo.getAppMemoryUsage());
-            System.out.println(deviceInfo.getClass().getMethod(("getDeviceTime")).getName() + " : " + deviceInfo.getDeviceTime());
-            System.out.println(deviceInfo.getClass().getMethod(("getDeviceBatteryLevel")).getName() + " : " + deviceInfo.getDeviceBatteryLevel());
-        } catch (NoSuchMethodException e) {
-            System.err.println(e.getMessage());
-        }
+        String info = deviceInfo.getAppVersion();
+        String log;
+        if (info != null && !info.isEmpty()) log = "App openned succesfully";
+        else log = "Could not open app";
+        Log.onTerminal(log);
     }
 }
