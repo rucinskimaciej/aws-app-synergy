@@ -12,12 +12,10 @@ public class BaseSetup {
 
     protected AndroidDriver driver;
     protected static String serverURL = "http://127.0.0.1:7777";
-    protected static String activityName;
 
     @BeforeClass
     protected void setup() {
-        if (activityName == null) throw new NullPointerException("Set static 'activityName' to define capabilities");
-        DeviceCapabilities caps = DeviceCapabilitiesGenerator.fromJson(activityName);
+        DeviceCapabilities caps = DeviceCapabilitiesGenerator.fromJson("MainActivity");
         driver = new AndroidDriver(serverURL, caps);
     }
 
