@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class MainActivityTest extends BaseSetup {
 
-    @Test(groups = {"all"})
+    @Test(groups = {"inProgress"})
     void connectionTest() {
         AndroidDeviceInfo deviceInfo = driver.info().getDeviceInfo();
         String info = deviceInfo.getAppVersion();
