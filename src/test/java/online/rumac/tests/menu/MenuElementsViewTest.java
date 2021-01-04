@@ -1,9 +1,8 @@
 package online.rumac.tests.menu;
 
-import com.synergy.core.driver.DeviceCapabilities;
 import com.synergy.core.driver.mobile.android.AndroidDriver;
-import online.rumac.common.util.deviceCapabilitiesInjector.DeviceCapabilitiesGenerator;
 import online.rumac.common.logger.Log;
+import online.rumac.tests.common.DriverGenerator;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -12,18 +11,15 @@ import static online.rumac.common.views.Menu.*;
 import static online.rumac.common.views.MenuElementsView.show;
 
 
-public class MenuElementsViewTest { //extends BaseSetup {
+public class MenuElementsViewTest {
 
     private AndroidDriver driver;
-    private static String serverURL = "http://127.0.0.1:7777";
-
-    @BeforeTest(alwaysRun = true)
+    @BeforeTest
     void setup() {
-        DeviceCapabilities caps = DeviceCapabilitiesGenerator.fromJson("MainActivity");
-        driver = new AndroidDriver(serverURL, caps);
+        driver = DriverGenerator.generate();
     }
 
-    @AfterTest(alwaysRun = true)
+    @AfterTest
     void tearDown() {
         driver.stop();
     }
