@@ -7,7 +7,7 @@ public enum Menu {
     NATIVE_COMPONENTS("Native Components"),
     INPUT_CONTROLS("Input Controls"),
     NESTED_VIEWS("Nested Views"),
-    CRASH_BUG("Crash Bug"),
+    CRASH_BUG("Crash/Bug"),
     ALERTS("Alerts"),
     LOGIN_PAGE("Login Page"),
     LOCAL_WEB_VIEW("Local Web View"),
