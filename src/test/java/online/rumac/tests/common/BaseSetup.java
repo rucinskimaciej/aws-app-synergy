@@ -9,12 +9,12 @@ public abstract class BaseSetup {
 
     protected AndroidDriver driver;
 
-    @BeforeMethod(groups = "setup")
+    @BeforeMethod(alwaysRun = true)
     public void testSetup() {
         driver = DriverGenerator.generate();
     }
 
-    @AfterMethod(groups = "setup")
+    @AfterMethod(alwaysRun = true)
     public void tearDown() {
         driver.stop();
     }
