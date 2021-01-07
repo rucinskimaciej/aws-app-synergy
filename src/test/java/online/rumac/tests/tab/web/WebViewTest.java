@@ -28,7 +28,7 @@ public class WebViewTest extends BaseSetup {
     }
 
 
-    @Test(groups = "inProgress")
+    @Test(groups = "broken")
     void searchBarInputTest() throws InterruptedException {
         Log.onTerminal("Attempting searchBarInputTest");
         MenuElementsView.show(Menu.WEB, driver);
