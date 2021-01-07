@@ -14,7 +14,7 @@ public class WebViewTest extends BaseSetup {
 
 
 
-    @Test(groups = "broken")
+    @Test(groups = "done")
     void websiteInputTest() throws InterruptedException {
         Log.onTerminal("Attempting websiteInputTest");
         MenuElementsView.show(Menu.WEB, driver);
@@ -29,7 +29,7 @@ public class WebViewTest extends BaseSetup {
     }
 
 
-    @Test(groups = "broken")
+    @Test(groups = "inProgress")
     void searchBarInputTest() throws InterruptedException {
         Log.onTerminal("Attempting searchBarInputTest");
         MenuElementsView.show(Menu.WEB, driver);
