@@ -18,6 +18,7 @@ public class WebViewTest extends BaseSetup {
     void websiteInputTest() throws InterruptedException {
         Log.onTerminal("Attempting websiteInputTest");
         MenuElementsView.show(Menu.WEB, driver);
+//        System.err.println(driver.screen().getContextHandles()); // <- returns only NATIVE_APP context
         MobileElement element = driver.finder().findElement(By.ID("com.amazonaws.devicefarm.android.referenceapp:id/website_input"));
         element.click();
         String sendKeys = "http://www.viacom.tech";
