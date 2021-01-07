@@ -19,7 +19,6 @@ public class SideMenuView implements View {
 
     @Override
     public void getViewFor(MobileDriver driver) {
-        driver.options().setElementTimeout(500);
         MobileElement sideMenuBarButton = driver.finder().findElement(By.ClassName("android.widget.ImageButton"));
         sideMenuBarButton.click();
     }

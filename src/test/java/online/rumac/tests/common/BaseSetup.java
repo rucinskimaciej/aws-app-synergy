@@ -12,6 +12,7 @@ public abstract class BaseSetup {
     @BeforeMethod(alwaysRun = true)
     public void testSetup() {
         driver = DriverGenerator.generate();
+        driver.options().setElementTimeout(500);
     }
 
     @AfterMethod(alwaysRun = true)
