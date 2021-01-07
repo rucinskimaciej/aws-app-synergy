@@ -1,26 +1,11 @@
 package online.rumac.tests.mainActivity;
 
 import com.synergy.core.driver.mobile.android.AndroidDeviceInfo;
-import com.synergy.core.driver.mobile.android.AndroidDriver;
 import online.rumac.common.logger.Log;
-import online.rumac.tests.common.DriverGenerator;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import online.rumac.tests.common.BaseSetup;
 import org.testng.annotations.Test;
 
-public class MainActivityTest {
-
-    private AndroidDriver driver;
-
-    @BeforeTest
-    void testSetup() {
-        driver = DriverGenerator.generate();
-    }
-
-    @AfterTest
-    void tearDown() {
-        driver.stop();
-    }
+public class MainActivityTest extends BaseSetup {
 
     @Test(groups = {"done"})
     void connectionTest() {

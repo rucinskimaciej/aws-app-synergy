@@ -1,28 +1,14 @@
 package online.rumac.tests.menu;
 
-import com.synergy.core.driver.mobile.android.AndroidDriver;
 import online.rumac.common.logger.Log;
-import online.rumac.tests.common.DriverGenerator;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import online.rumac.tests.common.BaseSetup;
 import org.testng.annotations.Test;
 
 import static online.rumac.common.views.Menu.*;
 import static online.rumac.common.views.MenuElementsView.show;
 
 
-public class MenuElementsViewTest {
-
-    private AndroidDriver driver;
-    @BeforeTest
-    void setup() {
-        driver = DriverGenerator.generate();
-    }
-
-    @AfterTest
-    void tearDown() {
-        driver.stop();
-    }
+public class MenuElementsViewTest extends BaseSetup {
 
     @Test(groups = {"done"})
     void homeViewTest() {

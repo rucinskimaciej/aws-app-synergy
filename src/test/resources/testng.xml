@@ -4,13 +4,14 @@
         <groups>
             <run>
                 <include name="inProgress"/>
+                <include name="setup"/>
                 <exclude name="done"/>
                 <exclude name="broken"/>
             </run>
         </groups>
         <packages>
             <package name="online.rumac.tests.*">
-                <exclude name="online.rumac.tests.common"/>
+<!--                <exclude name="online.rumac.tests.common"/>-->
             </package>
         </packages>
     </test>
