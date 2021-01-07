@@ -18,7 +18,6 @@ public class WebViewTest extends BaseSetup {
     void websiteInputTest() throws InterruptedException {
         Log.onTerminal("Attempting websiteInputTest");
         MenuElementsView.show(Menu.WEB, driver);
-//        System.err.println(driver.screen().getContextHandles()); // <- returns only NATIVE_APP context
         MobileElement element = driver.finder().findElement(By.ID("com.amazonaws.devicefarm.android.referenceapp:id/website_input"));
         element.click();
         String sendKeys = "http://www.viacom.tech";
@@ -33,7 +32,7 @@ public class WebViewTest extends BaseSetup {
     void searchBarInputTest() throws InterruptedException {
         Log.onTerminal("Attempting searchBarInputTest");
         MenuElementsView.show(Menu.WEB, driver);
-        driver.options().setElementTimeout(500);
+//        System.err.println(driver.screen().getContextHandles()); // <- returns only NATIVE_APP context
         MobileElement element = driver.finder().findElement(By.XPath("//android.webkit.WebView[@content-desc=\"Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs & more\"]/android.view.View[1]/android.view.View/android.view.View[4]/android.widget.EditText"));
         element.click();
         String keys = "Clean code";
