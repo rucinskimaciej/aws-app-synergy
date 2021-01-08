@@ -11,19 +11,10 @@ public class ImageCollection extends NativeComponentsView {
         super(driver);
     }
 
-    @Override
-    protected void goTo() {
-        // this is main view
-    }
-
     private static final String IMAGE_PATH = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/" +
             "android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support." +
             "v4.widget.DrawerLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4." +
             "view.ViewPager/android.widget.LinearLayout/android.widget.GridView/android.widget.ImageView";
-
-    private String getImagePath(int imageIndex) {
-        return String.format("%s[%d]",IMAGE_PATH, imageIndex + 1);
-    }
 
     public boolean imageIsOnScreen(int imageIndex) {
         try {
@@ -33,5 +24,35 @@ public class ImageCollection extends NativeComponentsView {
             // skip
         }
         return false;
+    }
+
+    @Override
+    protected void goTo() {
+        if (!isNativeImageGridViewOnScreen()) swipe.left(4);
+        throwExceptionIfScrollUnsuccessful();
+    }
+
+    private void throwExceptionIfScrollUnsuccessful() {
+        getNativeImageGridViewElement();
+    }
+
+    private boolean isNativeImageGridViewOnScreen() {
+        NativeElement element = null;
+        try {
+            element = getNativeImageGridViewElement();
+        } catch (ElementException e) {
+            // do nothing
+        }
+        return element != null;
+    }
+
+    private NativeElement getNativeImageGridViewElement() {
+        NativeElement element;
+        element = driver.finder().findElement(By.ID("com.amazonaws.devicefarm.android.referenceapp:id/native_image_grid_view"));
+        return element;
+    }
+
+    private String getImagePath(int imageIndex) {
+        return String.format("%s[%d]",IMAGE_PATH, imageIndex + 1);
     }
 }
