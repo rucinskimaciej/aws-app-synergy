@@ -19,9 +19,9 @@ public class MenuElementsViewTest extends BaseSetup {
 
     @Test(groups = {"done"})
     void webViewTest() {
-        Log.onTerminal("Attempting \"Web\" view test");
+        Log.onTerminal("Attempting \"WebView\" view test");
         show(WEB, driver);
-        Log.onTerminal("\"Web\" view opened successfully");
+        Log.onTerminal("\"WebView\" view opened successfully");
     }
 
     @Test(groups = {"done"})
@@ -69,9 +69,9 @@ public class MenuElementsViewTest extends BaseSetup {
     // requires scroll which shifts xpath
     @Test(groups = {"broken"}, enabled = false)
     void localWebViewViewTest() {
-        Log.onTerminal("Attempting \"Local Web View\" view test");
+        Log.onTerminal("Attempting \"Local WebView View\" view test");
         show(LOCAL_WEB_VIEW, driver);
-        Log.onTerminal("\"Local Web View\" view opened successfully");
+        Log.onTerminal("\"Local WebView View\" view opened successfully");
     }
 
     // requires scroll which shifts xpath
