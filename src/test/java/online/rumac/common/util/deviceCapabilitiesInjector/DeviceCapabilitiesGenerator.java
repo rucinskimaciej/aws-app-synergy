@@ -1,32 +1,45 @@
 package online.rumac.common.util.deviceCapabilitiesInjector;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.synergy.core.driver.DeviceCapabilities;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
-import java.io.FileReader;
+import java.io.File;
 import java.io.IOException;
+import java.util.Map;
 
 public class DeviceCapabilitiesGenerator {
 
-    public static DeviceCapabilities fromJson(String activityName) {
-        JSONObject json = (JSONObject) parse("src/test/resources/capabilitiesJson/" + activityName + ".json");
+    private static DeviceCapabilitiesGenerator instance = getInstance();
+    private final ObjectMapper objectMapper;
+
+    private DeviceCapabilitiesGenerator() {
+        objectMapper = new ObjectMapper();
+    }
+
+    private static DeviceCapabilitiesGenerator getInstance() {
+        if (instance == null) {
+            instance = new DeviceCapabilitiesGenerator();
+        }
+        return instance;
+    }
+
+    public static DeviceCapabilities fromJson(String inputFileName) {
+        Map<String, String> jsonMap = map("src/test/resources/capabilitiesJson/" + inputFileName + ".json");
         DeviceCapabilities caps = new DeviceCapabilities();
-        for (Object o : json.keySet()) {
-            String s = (String) o;
-            caps.addCapability(s, json.get(o));
+        for (Map.Entry<String, String> es : jsonMap.entrySet()) {
+            caps.addCapability(es.getKey(), es.getValue());
         }
         return caps;
     }
 
-    private static Object parse(String source) {
-        JSONParser parser = new JSONParser();
+    private static Map<String, String> map(String source) {
         try {
-            return parser.parse(new FileReader(source));
-        } catch (IOException | ParseException e) {
+            return instance.objectMapper.readValue(new File(source), new TypeReference<Map<String, String>>() {
+            });
+        } catch (IOException e) {
             e.printStackTrace();
         }
-        throw new NullPointerException();
+        throw new IllegalArgumentException("Invalid json path");
     }
 }
