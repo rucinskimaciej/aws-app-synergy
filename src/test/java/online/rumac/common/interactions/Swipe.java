@@ -9,30 +9,37 @@ public class Swipe {
 
     private final MobileDriver driver;
     private final ScreenDimensions screenDimensions;
+    private int scrollDurationMS;
 
     public Swipe(MobileDriver driver) {
         this.driver = driver;
         screenDimensions = new ScreenDimensions(driver);
+        scrollDurationMS = 10;
     }
 
-    public void right() {
-        swipeFromCenterTo(screenDimensions.leftEdgeOffset);
+    public Swipe setScrollDurationMS(int scrollDurationMS) {
+        this.scrollDurationMS = scrollDurationMS;
+        return this;
     }
 
-    public void left() {
-        swipeFromCenterTo(screenDimensions.rightEdgeOffset);
+    public void right(int numberOfScrolls) {
+        swipeFromCenterTo(screenDimensions.leftEdgeOffset, numberOfScrolls);
     }
 
-    public void up() {
-        swipeFromCenterTo(screenDimensions.downEdgeOffset);
+    public void left(int numberOfScrolls) {
+        swipeFromCenterTo(screenDimensions.rightEdgeOffset, numberOfScrolls);
     }
 
-    public void down () {
-        swipeFromCenterTo(screenDimensions.upEdgeOffset);
+    public void up(int numberOfScrolls) {
+        swipeFromCenterTo(screenDimensions.downEdgeOffset, numberOfScrolls);
     }
 
-    private void swipeFromCenterTo(Point2D edge) {
-        driver.screen().scroll(1, 100,
+    public void down (int numberOfScrolls) {
+        swipeFromCenterTo(screenDimensions.upEdgeOffset, numberOfScrolls);
+    }
+
+    private void swipeFromCenterTo(Point2D edge, int numberOfScrolls) {
+        driver.screen().scroll(numberOfScrolls, scrollDurationMS,
                 (int) screenDimensions.center.getX(), (int) screenDimensions.center.getY(),
                 (int) edge.getX(), (int) edge.getY());
     }
