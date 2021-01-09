@@ -3,7 +3,7 @@ package online.rumac.common.views.tabs.nativeComponents;
 import com.synergy.core.driver.By;
 import com.synergy.core.driver.elements.NativeElement;
 import com.synergy.core.driver.mobile.MobileDriver;
-import com.synergy.core.exceptions.ElementException;
+import com.synergy.core.exceptions.NoSuchElementException;
 import online.rumac.common.driver.DriverManager;
 import online.rumac.common.interactions.Swipe;
 import online.rumac.common.views.Menu;
@@ -25,11 +25,11 @@ public abstract class NativeComponentsView extends DriverManager {
         return this;
     }
 
-    public boolean containsTitle(String title) {
+    public boolean containsTitle(By title) {
         try {
-            NativeElement element = driver.finder().findElement(By.Text(title));
+            NativeElement element = driver.finder().findElement(title);
             return element != null;
-        } catch (ElementException e) {
+        } catch (NoSuchElementException e) {
             // do nothing
         }
         return false;

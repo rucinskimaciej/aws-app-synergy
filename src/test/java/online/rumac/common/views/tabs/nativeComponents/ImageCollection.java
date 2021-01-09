@@ -3,11 +3,11 @@ package online.rumac.common.views.tabs.nativeComponents;
 import com.synergy.core.driver.By;
 import com.synergy.core.driver.elements.NativeElement;
 import com.synergy.core.driver.mobile.MobileDriver;
-import com.synergy.core.exceptions.ElementException;
+import com.synergy.core.exceptions.NoSuchElementException;
 
 public class ImageCollection extends NativeComponentsView {
 
-    protected ImageCollection(MobileDriver driver) {
+    public ImageCollection(MobileDriver driver) {
         super(driver);
     }
 
@@ -20,7 +20,7 @@ public class ImageCollection extends NativeComponentsView {
         try {
             NativeElement element = driver.finder().findElement(By.XPath(getImagePath(imageIndex)));
             if (element != null) return true;
-        } catch (ElementException e) {
+        } catch (NoSuchElementException e) {
             // skip
         }
         return false;
@@ -40,7 +40,7 @@ public class ImageCollection extends NativeComponentsView {
         NativeElement element = null;
         try {
             element = getNativeImageGridViewElement();
-        } catch (ElementException e) {
+        } catch (NoSuchElementException e) {
             // do nothing
         }
         return element != null;
