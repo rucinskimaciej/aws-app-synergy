@@ -7,7 +7,7 @@ import online.rumac.common.util.deviceCapabilitiesInjector.DeviceCapabilitiesGen
 public final class DriverGenerator {
 
     // Edit capabilities name (without ".json" suffix) and server url
-    private final static String CAPABILITIES = "MainActivity";
+    private final static String CAPABILITIES = "AwsLenovo";
     private final static String SERVER_URL = "http://127.0.0.1:7777";
 
     public static AndroidDriver generate() {

@@ -1,0 +1,7 @@
+{
+  "Platform" : "Android",
+  "DeviceID" : "62210917GH126C707X1",
+  "AppPackage" : "src/test/resources/apk/touchscreen.apk",
+  "App" : "jp.rallwell.siriuth.touchscreentest",
+  "LaunchActivity" : "jp.rallwell.siriuth.touchscreentest.TouchScreenTestActivity"
+}
