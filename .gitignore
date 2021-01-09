@@ -1,3 +1,5 @@
 /target
 /.idea
+/src/test/resources/apk
+/src/test/java/online/rumac/tests/internalApiTests
 *.iml
