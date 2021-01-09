@@ -9,51 +9,55 @@ public class Swipe {
 
     private final ScreenPoints screen;
     private int scrollDurationMS;
+    private long threadSleep;
 
     public Swipe(MobileDriver driver) {
         this.driver = driver;
         screen = new ScreenPoints(driver, 50);
-        scrollDurationMS = 50;
+        scrollDurationMS = 150;
+        threadSleep = 0;
     }
 
-    public Swipe setScrollDurationMS(int scrollDurationMS) {
-        this.scrollDurationMS = scrollDurationMS;
-        return this;
+    private void scroll(int numberOfScrolls, int startX, int startY, int endX, int endY) {
+        try {
+            Thread.sleep(threadSleep);
+            driver.screen().scroll(numberOfScrolls, scrollDurationMS,
+                    startX, startY, endX, endY);
+            threadSleep = 0;
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public void right(int numberOfScrolls) {
-        Log.onTerminal("ATTEMPTING TO SCROLL RIGHT");
-        driver.screen().scroll(numberOfScrolls, scrollDurationMS,
+        scroll(numberOfScrolls,
                 (int) screen.rightEdgeOffset.getX(), (int) screen.center.getY(),
                 (int) screen.leftEdgeOffset.getX(), (int) screen.center.getY());
-
-        Log.onTerminal("RIGHT SCROLL SUCCESSFUL");
     }
 
     public void left(int numberOfScrolls) {
-        Log.onTerminal("ATTEMPTING TO SCROLL LEFT");
-        driver.screen().scroll(numberOfScrolls, scrollDurationMS,
+        scroll(numberOfScrolls,
                 (int) screen.leftEdgeOffset.getX(), (int) screen.center.getY(),
                 (int) screen.rightEdgeOffset.getX(), (int) screen.center.getY());
-
-        Log.onTerminal("LEFT SCROLL SUCCESSFUL");
     }
 
     public void up(int numberOfScrolls) {
-        Log.onTerminal("ATTEMPTING TO SCROLL UP");
-        driver.screen().scroll(numberOfScrolls, scrollDurationMS,
+        scroll(numberOfScrolls,
                 (int) screen.center.getX(), (int) screen.upEdgeOffset.getY(),
                 (int) screen.center.getX(), (int) screen.downEdgeOffset.getY());
-
-            Log.onTerminal("UP SCROLL SUCCESSFUL");
     }
 
     public void down (int numberOfScrolls) {
-        Log.onTerminal("ATTEMPTING TO SCROLL DOWN");
-        driver.screen().scroll(numberOfScrolls, scrollDurationMS,
+        scroll(numberOfScrolls,
                 (int) screen.center.getX(), (int) screen.downEdgeOffset.getY(),
                 (int) screen.center.getX(), (int) screen.upEdgeOffset.getY());
+    }
 
-            Log.onTerminal("DOWN SCROLL SUCCESSFUL");
+    public void setScrollDurationMS(int scrollDurationMS) {
+        this.scrollDurationMS = scrollDurationMS;
+    }
+
+    public void setThreadSleep(long threadSleep) {
+        this.threadSleep = threadSleep;
     }
 }
