@@ -27,7 +27,7 @@ public class ImageCollection extends NativeComponentsView {
     }
 
     @Override
-    protected void goTo() {
+    protected void goToView() {
         if (!isNativeImageGridViewOnScreen()) swipe.left(4);
         throwExceptionIfScrollUnsuccessful();
     }

@@ -17,9 +17,10 @@ public abstract class NativeComponentsView extends DriverManager {
         super(driver);
         MenuElementsView.show(Menu.NATIVE_COMPONENTS, driver);
         swipe = new Swipe(driver);
+        goToView();
     }
 
-    protected abstract void goTo();
+    protected abstract void goToView();
 
     public NativeComponentsView getView() {
         return this;
