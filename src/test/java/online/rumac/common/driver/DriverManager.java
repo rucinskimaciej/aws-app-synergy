@@ -9,4 +9,8 @@ public abstract class DriverManager {
     protected DriverManager(MobileDriver driver) {
         this.driver = driver;
     }
+
+    public MobileDriver getDriver() {
+        return driver;
+    }
 }
