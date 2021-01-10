@@ -9,6 +9,7 @@ public class ScreenPoints {
 
     public final MobileDriver driver;
     public final Dimension dimension;
+    private int offset;
     public final Point2D center;
     public final Point2D rightEdgeOffset;
     public final Point2D leftEdgeOffset;
@@ -19,10 +20,15 @@ public class ScreenPoints {
         if (offset < 0) throw new IllegalArgumentException("Offset cannot be negative");
         this.driver = driver;
         dimension = driver.screen().getSize();
+        this.offset = offset;
         center = new Point2D(dimension.getWidth() / 2, dimension.getHeight() / 2);
         rightEdgeOffset = new Point2D(dimension.getWidth() - offset, dimension.getHeight() / 2);
         leftEdgeOffset = new Point2D(offset, dimension.getHeight() / 2);
         upEdgeOffset = new Point2D(dimension.getWidth() / 2, offset);
         downEdgeOffset = new Point2D(dimension.getWidth() / 2, dimension.getHeight() - offset);
+    }
+
+    public void setOffset(int offset) {
+        this.offset = offset;
     }
 }

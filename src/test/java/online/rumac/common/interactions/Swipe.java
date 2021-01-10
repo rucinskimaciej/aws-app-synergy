@@ -60,4 +60,8 @@ public class Swipe {
     public void setThreadSleep(long threadSleep) {
         this.threadSleep = threadSleep;
     }
+
+    public void setOffset(int offset) {
+        screen.setOffset(offset);
+    }
 }
