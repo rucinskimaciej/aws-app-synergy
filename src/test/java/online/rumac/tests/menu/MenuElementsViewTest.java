@@ -4,8 +4,8 @@ import online.rumac.common.logger.Log;
 import online.rumac.tests.common.BaseSetup;
 import org.testng.annotations.Test;
 
-import static online.rumac.common.views.Menu.*;
-import static online.rumac.common.views.MenuElementsView.show;
+import static online.rumac.common.views.tabs.menu.Menu.*;
+import static online.rumac.common.views.tabs.menu.MenuElementsView.show;
 
 
 public class MenuElementsViewTest extends BaseSetup {
