@@ -1,7 +1,6 @@
 package online.rumac.common.interactions;
 
 import com.synergy.core.driver.mobile.MobileDriver;
-import online.rumac.common.logger.Log;
 
 public class Swipe {
 
@@ -43,13 +42,13 @@ public class Swipe {
 
     public void up(int numberOfScrolls) {
         scroll(numberOfScrolls,
-                (int) screen.center.getX(), (int) screen.upEdgeOffset.getY(),
+                (int) screen.center.getX(), (int) screen.center.getY(),
                 (int) screen.center.getX(), (int) screen.downEdgeOffset.getY());
     }
 
     public void down (int numberOfScrolls) {
         scroll(numberOfScrolls,
-                (int) screen.center.getX(), (int) screen.downEdgeOffset.getY(),
+                (int) screen.center.getX(), (int) screen.center.getY(),
                 (int) screen.center.getX(), (int) screen.upEdgeOffset.getY());
     }
 
