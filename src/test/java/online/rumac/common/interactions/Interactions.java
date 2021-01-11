@@ -8,8 +8,8 @@ public interface Interactions {
 
     MobileDriver getDriver();
 
-    default Swipe scroll() {
-        return new Swipe(getDriver());
+    default Scroll scroll() {
+        return new Scroll(getDriver());
     }
 
     default boolean contains(String s, By locator) {

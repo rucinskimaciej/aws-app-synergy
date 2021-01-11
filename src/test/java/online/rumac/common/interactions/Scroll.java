@@ -6,7 +6,7 @@ import com.synergy.core.driver.mobile.MobileScreen;
 
 import java.util.List;
 
-public class Swipe {
+public class Scroll {
 
     private final MobileDriver driver;
 
@@ -14,7 +14,7 @@ public class Swipe {
     private int scrollDurationMS;
     private long threadSleep;
 
-    public Swipe(MobileDriver driver) {
+    public Scroll(MobileDriver driver) {
         this.driver = driver;
         screen = new ScreenPoints(driver, 50);
         scrollDurationMS = 150;

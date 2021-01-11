@@ -20,7 +20,8 @@ public class SideMenuView implements View {
 
     @Override
     public void getViewFor(MobileDriver driver) {
-        MobileElement sideMenuBarButton = driver.finder().findElement(By.ClassName("android.widget.ImageButton"));
+        MobileElement sideMenuBarButton = driver.finder().findElement(By.XPath("//android.widget.ImageButton[@content-desc=\"ReferenceApp\"]"));
+//        MobileElement sideMenuBarButton = driver.finder().findElement(By.ClassName("android.widget.ImageButton"));
         sideMenuBarButton.click();
     }
 }

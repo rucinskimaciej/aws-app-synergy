@@ -6,7 +6,7 @@ import com.synergy.core.driver.mobile.MobileDriver;
 import com.synergy.core.exceptions.NoSuchElementException;
 import online.rumac.common.driver.DriverManager;
 import online.rumac.common.interactions.Interactions;
-import online.rumac.common.interactions.Swipe;
+import online.rumac.common.interactions.Scroll;
 import online.rumac.common.views.tabs.menu.Menu;
 import online.rumac.common.views.tabs.menu.MenuElementsView;
 
@@ -20,8 +20,8 @@ public abstract class NativeComponentsView extends DriverManager implements Inte
     }
 
     @Override
-    public Swipe scroll() {
-        Swipe scroll = new Swipe(driver);
+    public Scroll scroll() {
+        Scroll scroll = new Scroll(driver);
         scroll.setThreadSleep(500);
         return scroll;
     }
