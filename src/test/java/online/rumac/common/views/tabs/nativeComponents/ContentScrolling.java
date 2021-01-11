@@ -1,6 +1,7 @@
 package online.rumac.common.views.tabs.nativeComponents;
 
 import com.synergy.core.driver.mobile.MobileDriver;
+import online.rumac.common.logger.Log;
 
 public class ContentScrolling extends NativeComponentsView {
 
@@ -10,7 +11,6 @@ public class ContentScrolling extends NativeComponentsView {
 
     @Override
     public void goToView() {
-        swipe.setThreadSleep(400);
-        swipe.right(1);
+        scroll().right(1);
     }
 }
