@@ -74,7 +74,7 @@
             <suiteXmlFiles>
               <suiteXmlFile>src\test\resources\testng.xml</suiteXmlFile>
             </suiteXmlFiles>
-            <groups>inProgress,done,broken</groups>
+            <groups>undone,done,broken</groups>
           </configuration>
         </plugin>
       </plugins>

@@ -3,7 +3,7 @@
     <test name="All tests">
         <groups>
             <run>
-                <include name="inProgress"/>
+                <include name="undone"/>
                 <exclude name="done"/>
                 <exclude name="broken"/>
             </run>
