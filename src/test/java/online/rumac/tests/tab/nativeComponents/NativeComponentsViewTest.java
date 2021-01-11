@@ -17,7 +17,7 @@ public abstract class NativeComponentsViewTest extends BaseSetup {
         this.title = getTitle();
     }
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     protected abstract void setViewBeforeMethod();
 
     protected abstract int getTitleXpathIndex();
