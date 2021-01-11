@@ -5,19 +5,25 @@ import com.synergy.core.driver.elements.NativeElement;
 import com.synergy.core.driver.mobile.MobileDriver;
 import com.synergy.core.exceptions.NoSuchElementException;
 import online.rumac.common.driver.DriverManager;
+import online.rumac.common.interactions.Interactions;
 import online.rumac.common.interactions.Swipe;
-import online.rumac.common.views.Menu;
-import online.rumac.common.views.MenuElementsView;
+import online.rumac.common.views.tabs.menu.Menu;
+import online.rumac.common.views.tabs.menu.MenuElementsView;
 
-public abstract class NativeComponentsView extends DriverManager {
-
-    protected final Swipe swipe;
+public abstract class NativeComponentsView extends DriverManager implements Interactions {
 
     protected NativeComponentsView(MobileDriver driver) {
         super(driver);
+        driver.options().setElementTimeout(1000);
         MenuElementsView.show(Menu.NATIVE_COMPONENTS, driver);
-        swipe = new Swipe(driver);
         goToView();
+    }
+
+    @Override
+    public Swipe scroll() {
+        Swipe scroll = new Swipe(driver);
+        scroll.setThreadSleep(500);
+        return scroll;
     }
 
     protected abstract void goToView();
