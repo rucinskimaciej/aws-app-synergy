@@ -1,7 +1,10 @@
 package online.rumac.common.interactions;
 
+import com.synergy.core.driver.ScreenText;
 import com.synergy.core.driver.mobile.MobileDriver;
 import com.synergy.core.driver.mobile.MobileScreen;
+
+import java.util.List;
 
 public class Swipe {
 
@@ -53,6 +56,7 @@ public class Swipe {
                 (int) screen.center.getX(), (int) screen.upEdgeOffset.getY());
     }
 
+/*  // USABLE IF THERE IS A WAY TO COMPARE SCREENS (driver.screen())
     private void scrollToMost(String direction) {
         MobileScreen previousScreen;
         do {
@@ -93,8 +97,20 @@ public class Swipe {
 
     private boolean canScrollFurther(MobileScreen previousScreen) {
         if (previousScreen == null) return false;
-        return previousScreen.equals(driver.screen());
+        return !areEqualScreens(previousScreen,driver.screen());
     }
+
+    private boolean areEqualScreens(MobileScreen screen1, MobileScreen screen2) {
+        if (screen1 == null || screen2 == null) return false;
+        List<ScreenText> s1 = screen1.getText();
+        List<ScreenText> s2 = screen2.getText();
+        if (s1 == null || s2 == null) return false;
+        System.err.print(screen1.getText().get(s1.size() - 1));
+        System.out.print(" vs ");
+        System.err.print(screen2.getText().get(s2.size() - 1) + "\n");
+        return s1.get(s1.size() - 1).getText().equals(s2.get(s2.size() - 1).getText());
+    }
+*/
 
 
     public void setScrollDurationMS(int scrollDurationMS) {
