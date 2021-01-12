@@ -1,8 +1,8 @@
-package online.rumac.tests.menu;
+package online.rumac.pages.menu;
 
 import online.rumac.common.logger.Log;
 import online.rumac.pages.menu.view.SideMenuView;
-import online.rumac.tests.common.BaseSetup;
+import online.rumac.common.BaseSetup;
 import org.testng.annotations.Test;
 
 public class SideMenuViewTest extends BaseSetup {

@@ -1,8 +1,8 @@
-package online.rumac.tests.mainActivity;
+package online.rumac.pages.mainActivity;
 
 import com.synergy.core.driver.mobile.android.AndroidDeviceInfo;
 import online.rumac.common.logger.Log;
-import online.rumac.tests.common.BaseSetup;
+import online.rumac.common.BaseSetup;
 import org.testng.annotations.Test;
 
 public class MainActivityTest extends BaseSetup {

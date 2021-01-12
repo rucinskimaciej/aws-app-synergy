@@ -1,4 +1,4 @@
-package online.rumac.tests.tab.nativeComponents;
+package online.rumac.pages.tab.nativeComponents;
 
 import com.synergy.core.driver.By;
 import online.rumac.pages.tabs.nativeComponents.ContentScrolling;

@@ -1,4 +1,4 @@
-package online.rumac.tests.common;
+package online.rumac.common;
 
 import com.synergy.core.driver.DeviceCapabilities;
 import com.synergy.core.driver.mobile.android.AndroidDriver;

@@ -1,8 +1,8 @@
-package online.rumac.tests.tab.nativeComponents;
+package online.rumac.pages.tab.nativeComponents;
 
 import com.synergy.core.driver.By;
 import online.rumac.pages.tabs.nativeComponents.NativeComponentsView;
-import online.rumac.tests.common.BaseSetup;
+import online.rumac.common.BaseSetup;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 

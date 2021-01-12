@@ -1,9 +1,9 @@
-package online.rumac.tests.tab.web;
+package online.rumac.pages.tab.web;
 
 import com.synergy.core.driver.By;
 import online.rumac.common.logger.Log;
 import online.rumac.pages.tabs.web.WebView;
-import online.rumac.tests.common.BaseSetup;
+import online.rumac.common.BaseSetup;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 

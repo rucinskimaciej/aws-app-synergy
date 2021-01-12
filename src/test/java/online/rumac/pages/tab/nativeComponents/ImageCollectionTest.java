@@ -1,4 +1,4 @@
-package online.rumac.tests.tab.nativeComponents;
+package online.rumac.pages.tab.nativeComponents;
 
 import online.rumac.pages.tabs.nativeComponents.ImageCollection;
 import org.testng.annotations.BeforeMethod;
