@@ -1,10 +1,10 @@
-package online.rumac.common.views.tabs.menu;
+package online.rumac.pages.menu.view;
 
 import com.synergy.core.driver.By;
 import com.synergy.core.driver.elements.MobileElement;
 import com.synergy.core.driver.mobile.MobileDriver;
 
-import static online.rumac.common.views.tabs.menu.Menu.*;
+import static online.rumac.pages.menu.view.Menu.*;
 
 public class MenuElementsView {
 

@@ -1,4 +1,4 @@
-package online.rumac.common.views.tabs.nativeComponents;
+package online.rumac.pages.tabs.nativeComponents;
 
 import com.synergy.core.driver.By;
 import com.synergy.core.driver.elements.NativeElement;
@@ -7,8 +7,8 @@ import com.synergy.core.exceptions.NoSuchElementException;
 import online.rumac.common.driver.DriverManager;
 import online.rumac.common.interactions.Interactions;
 import online.rumac.common.interactions.Scroll;
-import online.rumac.common.views.tabs.menu.Menu;
-import online.rumac.common.views.tabs.menu.MenuElementsView;
+import online.rumac.pages.menu.view.Menu;
+import online.rumac.pages.menu.view.MenuElementsView;
 
 public abstract class NativeComponentsView extends DriverManager implements Interactions {
 

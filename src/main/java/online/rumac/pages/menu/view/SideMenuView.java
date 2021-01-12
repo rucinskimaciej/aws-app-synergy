@@ -1,9 +1,9 @@
-package online.rumac.common.views.tabs.menu;
+package online.rumac.pages.menu.view;
 
 import com.synergy.core.driver.By;
 import com.synergy.core.driver.elements.MobileElement;
 import com.synergy.core.driver.mobile.MobileDriver;
-import online.rumac.common.views.View;
+import online.rumac.pages.menu.View;
 
 public class SideMenuView implements View {
 

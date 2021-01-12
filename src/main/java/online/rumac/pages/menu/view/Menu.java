@@ -1,4 +1,4 @@
-package online.rumac.common.views.tabs.menu;
+package online.rumac.pages.menu.view;
 
 public enum Menu {
 

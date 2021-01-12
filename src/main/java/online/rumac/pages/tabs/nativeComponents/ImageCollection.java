@@ -1,4 +1,4 @@
-package online.rumac.common.views.tabs.nativeComponents;
+package online.rumac.pages.tabs.nativeComponents;
 
 import com.synergy.core.driver.By;
 import com.synergy.core.driver.elements.NativeElement;

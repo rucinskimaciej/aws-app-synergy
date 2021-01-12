@@ -1,4 +1,4 @@
-package online.rumac.common.views;
+package online.rumac.pages.menu;
 
 import com.synergy.core.driver.mobile.MobileDriver;
 

@@ -1,4 +1,4 @@
-package online.rumac.common.views.tabs.web;
+package online.rumac.pages.tabs.web;
 
 import com.synergy.core.driver.By;
 import com.synergy.core.driver.elements.MobileElement;
@@ -6,8 +6,8 @@ import com.synergy.core.driver.mobile.MobileDriver;
 import com.synergy.core.driver.mobile.android.AndroidDriver;
 import online.rumac.common.driver.DriverManager;
 import online.rumac.common.interactions.KeysSender;
-import online.rumac.common.views.tabs.menu.Menu;
-import online.rumac.common.views.tabs.menu.MenuElementsView;
+import online.rumac.pages.menu.view.Menu;
+import online.rumac.pages.menu.view.MenuElementsView;
 
 public class WebView extends DriverManager implements KeysSender {
 

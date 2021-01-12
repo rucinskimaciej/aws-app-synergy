@@ -1,7 +1,6 @@
 package online.rumac.tests.tab.nativeComponents;
 
-import com.synergy.core.driver.By;
-import online.rumac.common.views.tabs.nativeComponents.ImageCollection;
+import online.rumac.pages.tabs.nativeComponents.ImageCollection;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 

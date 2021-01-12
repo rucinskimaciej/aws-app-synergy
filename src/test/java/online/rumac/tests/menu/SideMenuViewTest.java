@@ -1,7 +1,7 @@
 package online.rumac.tests.menu;
 
 import online.rumac.common.logger.Log;
-import online.rumac.common.views.tabs.menu.SideMenuView;
+import online.rumac.pages.menu.view.SideMenuView;
 import online.rumac.tests.common.BaseSetup;
 import org.testng.annotations.Test;
 
