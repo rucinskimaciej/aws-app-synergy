@@ -4,6 +4,8 @@ import online.rumac.common.logger.Log;
 import online.rumac.tests.common.BaseSetup;
 import org.testng.annotations.Test;
 
+import static online.rumac.pages.menu.view.Menu.*;
+import static online.rumac.pages.menu.view.Menu.WEB;
 import static online.rumac.pages.menu.view.MenuElementsView.show;
 
 
