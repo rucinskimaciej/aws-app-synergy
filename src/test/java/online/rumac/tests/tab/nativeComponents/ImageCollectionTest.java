@@ -12,7 +12,7 @@ import static org.testng.Assert.*;
 public class ImageCollectionTest extends NativeComponentsViewTest {
 
     @Override
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     protected void setViewBeforeMethod() {
         view = new ImageCollection(driver);
     }
