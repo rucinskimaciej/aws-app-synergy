@@ -12,7 +12,7 @@ import static org.testng.Assert.*;
 public class ImageCollectionTest extends NativeComponentsViewTest {
 
     @Override
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     protected void setViewBeforeMethod() {
         view = new ImageCollection(driver);
     }
@@ -27,7 +27,7 @@ public class ImageCollectionTest extends NativeComponentsViewTest {
         return "Image Collection";
     }
 
-    @Test(groups = "done")
+    @Test(groups = "undone")
     void findImagesOnScreen() {
         assertTrue(((ImageCollection) view).imageIsOnScreen(1 + new Random().nextInt(6)));
     }
