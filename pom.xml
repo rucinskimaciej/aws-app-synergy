@@ -45,7 +45,7 @@
         <groupId>com.viacom.mqe</groupId>
         <artifactId>synergy-java</artifactId>
         <version>1.0.20</version>
-        <scope>test</scope>
+<!--        <scope>test</scope>-->
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
