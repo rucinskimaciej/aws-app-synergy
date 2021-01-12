@@ -4,7 +4,7 @@
         <groups>
             <run>
                 <include name="undone"/>
-                <include name="done"/>
+                <exclude name="done"/>
                 <exclude name="broken"/>
             </run>
         </groups>
