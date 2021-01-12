@@ -27,7 +27,7 @@ public class ImageCollectionTest extends NativeComponentsViewTest {
         return "Image Collection";
     }
 
-    @Test(groups = "undone")
+    @Test(groups = "done")
     void findImagesOnScreen() {
         assertTrue(((ImageCollection) view).imageIsOnScreen(1 + new Random().nextInt(6)));
     }

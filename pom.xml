@@ -25,6 +25,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>8</java.version>
+    <aspectj.version>1.9.6</aspectj.version>
   </properties>
 
   <dependencies>
@@ -51,6 +52,12 @@
       <artifactId>jackson-databind</artifactId>
       <version>2.11.3</version>
     </dependency>
+    <dependency>
+      <groupId>io.qameta.allure</groupId>
+      <artifactId>allure-testng</artifactId>
+      <version>2.13.3</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>
@@ -75,6 +82,24 @@
               <suiteXmlFile>src\test\resources\testng.xml</suiteXmlFile>
             </suiteXmlFiles>
             <groups>undone,done,broken</groups>
+            <argLine>
+              -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+            </argLine>
+          </configuration>
+          <dependencies>
+            <dependency>
+              <groupId>org.aspectj</groupId>
+              <artifactId>aspectjweaver</artifactId>
+              <version>${aspectj.version}</version>
+            </dependency>
+          </dependencies>
+        </plugin>
+        <plugin>
+          <groupId>io.qameta.allure</groupId>
+          <artifactId>allure-maven</artifactId>
+          <version>2.10.0</version>
+          <configuration>
+            <reportDirectory>target/allure-report</reportDirectory>
           </configuration>
         </plugin>
       </plugins>
