@@ -100,6 +100,7 @@
           <version>2.10.0</version>
           <configuration>
             <reportDirectory>target/allure-report</reportDirectory>
+            <propertiesFilePath>src/test/resources/properties</propertiesFilePath>
           </configuration>
         </plugin>
       </plugins>
