@@ -9,9 +9,7 @@
             </run>
         </groups>
         <packages>
-            <package name="online.rumac.tests.*">
-<!--                <exclude name="online.rumac.tests.common"/>-->
-            </package>
+            <package name="online.rumac.*"/>
         </packages>
     </test>
 </suite>
