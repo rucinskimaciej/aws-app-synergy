@@ -1,13 +1,13 @@
 package online.rumac.common;
 
-import com.synergy.core.driver.mobile.android.AndroidDriver;
+import com.synergy.core.driver.mobile.MobileDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 
 public abstract class BaseSetup {
 
-    protected AndroidDriver driver;
+    protected MobileDriver driver;
 
     @BeforeMethod(alwaysRun = true)
     public void testSetup() {
