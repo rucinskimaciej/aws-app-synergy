@@ -1,6 +1,7 @@
 package online.rumac.common;
 
 import com.synergy.core.driver.DeviceCapabilities;
+import com.synergy.core.driver.mobile.MobileDriver;
 import com.synergy.core.driver.mobile.android.AndroidDriver;
 import online.rumac.exceptions.EmptyCapabilitiesException;
 import online.rumac.common.util.deviceCapabilitiesInjector.DeviceCapabilitiesGenerator;
@@ -11,17 +12,26 @@ public final class DriverGenerator {
     public static final String SERVER_URL_PROPERTY = "synergy.server.url";
     public static final String DEFAULT_SYNERGY_SERVER = "http://127.0.0.1:7777";
 
+    // todo MAKE generate() return MobileDriver to increase abstraction level
     public static AndroidDriver generate() {
-        DeviceCapabilities caps = DeviceCapabilitiesGenerator.fromJson(getCapabilities());
-        // todo return getPlatformSpecificDriver();
-        return new AndroidDriver(getServer(), caps);
+        DeviceCapabilities caps = DeviceCapabilitiesGenerator.fromJson(getJsonCapabilitiesFileName());
+        String server = getServer();
+        return getPlatformSpecificDriver(server, caps);
+    }
+
+    private static MobileDriver getPlatformSpecificDriver(String server, DeviceCapabilities caps) {
+        switch (getPlatformName()) {
+            // fixme add cases for ANDROID and IOS
+            default: throw new IllegalArgumentException(
+                    "Could not determine platform. Make sure that capabilities JSON file contains correct values");
+        }
     }
 
     private static String getServer() {
         return System.getProperty(SERVER_URL_PROPERTY, DEFAULT_SYNERGY_SERVER);
     }
 
-    private static String getCapabilities() {
+    private static String getJsonCapabilitiesFileName() {
         try {
             return System.getProperty(CAPABILITIES_PROPERTY);
         } catch (IllegalArgumentException e) {
