@@ -1,6 +1,7 @@
 package online.rumac.common;
 
 import com.synergy.core.driver.mobile.MobileDriver;
+import online.rumac.common.driver.DriverGenerator;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 

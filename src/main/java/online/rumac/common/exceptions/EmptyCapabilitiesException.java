@@ -1,4 +1,4 @@
-package online.rumac.exceptions;
+package online.rumac.common.exceptions;
 
 public class EmptyCapabilitiesException extends IllegalArgumentException {
 

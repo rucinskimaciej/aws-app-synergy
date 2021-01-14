@@ -1,10 +1,10 @@
-package online.rumac.common;
+package online.rumac.common.driver;
 
 import com.synergy.core.driver.DeviceCapabilities;
 import com.synergy.core.driver.mobile.MobileDriver;
 import com.synergy.core.driver.mobile.android.AndroidDriver;
 import com.synergy.core.driver.mobile.ios.IOSDriver;
-import online.rumac.exceptions.EmptyCapabilitiesException;
+import online.rumac.common.exceptions.EmptyCapabilitiesException;
 import online.rumac.common.util.deviceCapabilitiesInjector.DeviceCapabilitiesGenerator;
 
 import static online.rumac.common.util.platformIdentifier.PlatformIdentifier.*;
