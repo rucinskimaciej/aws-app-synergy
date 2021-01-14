@@ -85,6 +85,11 @@
             <argLine>
               -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
             </argLine>
+            <systemPropertyVariables>
+              <propertyName>json.capabilities</propertyName>
+              <propertyName>synergy.server.url</propertyName>
+              <buildDirectory>${project.build.directory}</buildDirectory>
+            </systemPropertyVariables>
           </configuration>
           <dependencies>
             <dependency>
