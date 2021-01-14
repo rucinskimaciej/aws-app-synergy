@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class SideMenuViewTest extends BaseSetup {
 
-    @Test(groups = "undone")
+    @Test(groups = "done")
     void openSideMenuBar() {
         SideMenuView.getInstance().getViewFor(driver);
         Log.onTerminal("Side menu opened successfully");

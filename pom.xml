@@ -45,7 +45,6 @@
         <groupId>com.viacom.mqe</groupId>
         <artifactId>synergy-java</artifactId>
         <version>1.0.20</version>
-<!--        <scope>test</scope>-->
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
@@ -83,10 +82,6 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.22.2</version>
           <configuration>
-            <suiteXmlFiles>
-              <suiteXmlFile>src\test\resources\testng.xml</suiteXmlFile>
-            </suiteXmlFiles>
-            <groups>undone,done,broken</groups>
             <argLine>
               -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
             </argLine>
