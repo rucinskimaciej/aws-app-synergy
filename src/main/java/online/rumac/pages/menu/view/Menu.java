@@ -3,14 +3,14 @@ package online.rumac.pages.menu.view;
 public enum Menu {
 
     HOME("Home"),
-    WEB("WebView"),
+    WEB("Web"),
     NATIVE_COMPONENTS("Native Components"),
     INPUT_CONTROLS("Input Controls"),
     NESTED_VIEWS("Nested Views"),
     CRASH_BUG("Crash/Bug"),
     ALERTS("Alerts"),
     LOGIN_PAGE("Login Page"),
-    LOCAL_WEB_VIEW("Local WebView View"),
+    LOCAL_WEB_VIEW("Local Web View"),
     FIXTURES("Fixtures"),
     SUPPLEMENTAL_UPLOADS("Supplemental Uploads");
 
