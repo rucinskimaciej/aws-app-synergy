@@ -99,15 +99,6 @@
             </dependency>
           </dependencies>
         </plugin>
-        <plugin>
-          <groupId>io.qameta.allure</groupId>
-          <artifactId>allure-maven</artifactId>
-          <version>2.10.0</version>
-          <configuration>
-            <reportDirectory>target/allure-report</reportDirectory>
-            <propertiesFilePath>src/test/resources/properties</propertiesFilePath>
-          </configuration>
-        </plugin>
       </plugins>
     </pluginManagement>
   </build>
