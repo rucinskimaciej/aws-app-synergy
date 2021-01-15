@@ -10,8 +10,8 @@ public class MenuElementsView {
 
     public static void show(Menu menuElement, MobileDriver driver) {
         SideMenuView.getInstance().getViewFor(driver);
-        MobileElement element = driver.finder().findElement(By.XPath(getXpath(ofIndex(menuElement))));
-//        MobileElement element = driver.finder().findElement(By.Text(menuElement.getField())); // <= driver.finder() can never find element by text
+        String text = String.format("text(\"%s\")", menuElement.getField());
+        MobileElement element = driver.finder().findElement(By.AndroidUIAutomator(text));
         element.click();
     }
 }
