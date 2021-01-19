@@ -27,17 +27,17 @@ public class VideoPlayerTest extends NativeComponentsViewTest {
         return "Video Player";
     }
 
-    @Test(groups = "undone")
+    @Test(groups = "done")
     void isVideoElementDisplayed() {
         assertTrue(videoPlayer.isDisplayed());
     }
 
-    @Test(groups = "undone")
+    @Test(groups = "done")
     void containsVideoElement() {
         assertNotNull(videoPlayer.getVideoElement());
     }
 
-    @Test(groups = "undone")
+    @Test(groups = "done")
     void isVideoElementEnabled() {
         try {
             Thread.sleep(1000);
