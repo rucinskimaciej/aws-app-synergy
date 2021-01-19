@@ -1,6 +1,7 @@
 package online.rumac.pages.tabs.nativeComponents;
 
 import com.synergy.core.driver.By;
+import com.synergy.core.driver.elements.MobileElement;
 import com.synergy.core.driver.elements.NativeElement;
 import com.synergy.core.driver.mobile.MobileDriver;
 import com.synergy.core.exceptions.NoSuchElementException;
@@ -9,6 +10,9 @@ import online.rumac.common.interactions.Interactions;
 import online.rumac.common.interactions.Scroll;
 import online.rumac.pages.menu.view.Menu;
 import online.rumac.pages.menu.view.MenuElementsView;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 public abstract class NativeComponentsView extends DriverManager implements Interactions {
 
@@ -41,5 +45,20 @@ public abstract class NativeComponentsView extends DriverManager implements Inte
             // do nothing
         }
         return false;
+    }
+
+    protected MobileElement supplyElementBy(String method, String locator) {
+        By by = by(method, locator);
+        return driver.finder().findElement(by);
+    }
+
+    private By by(String method, String locator) {
+        try {
+            Method m = By.class.getMethod(method, String.class);
+            return (By) m.invoke(null, locator);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

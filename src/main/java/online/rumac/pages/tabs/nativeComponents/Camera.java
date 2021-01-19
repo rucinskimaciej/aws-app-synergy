@@ -11,7 +11,8 @@ public class Camera extends NativeComponentsView {
 
     protected Camera(MobileDriver driver) {
         super(driver);
-        camera = supplyCameraElement();
+        String idLocator = "com.amazonaws.devicefarm.android.referenceapp:id/camera_surface_view";
+        camera = supplyElementBy("ID", idLocator);
     }
 
     public boolean isDisplayed() {
@@ -20,17 +21,6 @@ public class Camera extends NativeComponentsView {
 
     public boolean isEnabled() {
         return camera.isEnabled();
-    }
-
-    private MobileElement supplyCameraElement() {
-        MobileElement camera = null;
-        try {
-            String id = "com.amazonaws.devicefarm.android.referenceapp:id/camera_surface_view";
-            camera = driver.finder().findElement(By.ID(id));
-        } catch (NoSuchElementException e) {
-            e.printStackTrace();
-        }
-        return camera;
     }
 
     @Override

@@ -18,7 +18,7 @@ public class ImageCollection extends NativeComponentsView {
 
     public boolean imageIsOnScreen(int imageIndex) {
         try {
-            NativeElement element = driver.finder().findElement(By.XPath(getImagePath(imageIndex)));
+            NativeElement element = supplyElementBy("XPath", getImagePath(imageIndex));
             if (element != null) return true;
         } catch (NoSuchElementException e) {
             // skip
@@ -47,9 +47,7 @@ public class ImageCollection extends NativeComponentsView {
     }
 
     private NativeElement getNativeImageGridViewElement() {
-        NativeElement element;
-        element = driver.finder().findElement(By.ID("com.amazonaws.devicefarm.android.referenceapp:id/native_image_grid_view"));
-        return element;
+        return supplyElementBy("ID", "com.amazonaws.devicefarm.android.referenceapp:id/native_image_grid_view");
     }
 
     private String getImagePath(int imageIndex) {
