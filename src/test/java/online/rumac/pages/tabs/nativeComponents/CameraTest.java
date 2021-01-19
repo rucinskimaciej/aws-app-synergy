@@ -10,12 +10,12 @@ public class CameraTest extends NativeComponentsViewTest {
 
     private Camera cameraView;
 
-    @Test(groups = "undone")
+    @Test(groups = "done")
     public void testIsDisplayed() {
         assertTrue(cameraView.isDisplayed());
     }
 
-    @Test(groups = "undone")
+    @Test(groups = "done")
     public void testIsEnabled() {
         assertTrue(cameraView.isEnabled());
     }
