@@ -11,6 +11,11 @@ public class ContentOutOfViewTest extends NativeComponentsViewTest {
     private ContentOutOfView contentOutOfView;
 
     @Test(groups = "undone")
+    public void findsTextWhenScrollsToBottom() {
+        assertEquals(contentOutOfView.scrollAndFindHiddenText(), "This is hidden text");
+    }
+
+    @Test(groups = "done")
     public void throwsWhenFindingTextOnBaseScreen() {
         assertThrows(NoSuchElementException.class, () -> contentOutOfView.findHiddenText());
     }
