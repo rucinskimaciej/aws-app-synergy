@@ -20,18 +20,10 @@ public abstract class NativeComponentsViewTest extends BaseSetup {
     @BeforeMethod(alwaysRun = true)
     protected abstract void setViewBeforeMethod();
 
-    protected abstract int getTitleXpathIndex();
-
     protected abstract String getTitle();
-
-    protected String getTitleXPath() {
-        return String.format("%s[%d]", titlePath, getTitleXpathIndex());
-    }
 
     @Test(groups = "done")
     void findViewTitle() {
-        assertTrue(view.containsTitle(By.XPath(getTitleXPath())));
+        assertTrue(view.containsTitle(getTitle()));
     }
-
-    private final String titlePath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.view.ViewPager/android.view.ViewGroup/android.widget.TextView";
 }

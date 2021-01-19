@@ -16,11 +16,6 @@ public class ContentScrollingTest extends NativeComponentsViewTest {
         view = new ContentScrolling(driver);
     }
 
-    @Override
-    protected int getTitleXpathIndex() {
-        return 2;
-    }
-
     @Test(groups = "done")
     void findTextAfterScrolling() {
         view.scroll().down(5);

@@ -32,9 +32,10 @@ public abstract class NativeComponentsView extends DriverManager implements Inte
         return this;
     }
 
-    public boolean containsTitle(By title) {
+    public boolean containsTitle(String title) {
         try {
-            NativeElement element = driver.finder().findElement(title);
+            String locator = String.format("text(\"%s\")", title);
+            NativeElement element = driver.finder().findElement(By.AndroidUIAutomator(locator));
             return element != null;
         } catch (NoSuchElementException e) {
             // do nothing

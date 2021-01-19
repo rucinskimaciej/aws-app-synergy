@@ -18,11 +18,6 @@ public class VideoPlayerTest extends NativeComponentsViewTest {
     }
 
     @Override
-    protected int getTitleXpathIndex() {
-        return 2;
-    }
-
-    @Override
     protected String getTitle() {
         return "Video Player";
     }

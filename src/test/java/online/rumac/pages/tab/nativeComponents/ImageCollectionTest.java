@@ -17,11 +17,6 @@ public class ImageCollectionTest extends NativeComponentsViewTest {
     }
 
     @Override
-    protected int getTitleXpathIndex() {
-        return 1;
-    }
-
-    @Override
     protected String getTitle() {
         return "Image Collection";
     }
