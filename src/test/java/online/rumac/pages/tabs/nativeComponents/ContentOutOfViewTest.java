@@ -1,0 +1,29 @@
+package online.rumac.pages.tabs.nativeComponents;
+
+import com.synergy.core.exceptions.NoSuchElementException;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import static org.testng.Assert.*;
+
+public class ContentOutOfViewTest extends NativeComponentsViewTest {
+
+    private ContentOutOfView contentOutOfView;
+
+    @Test(groups = "undone")
+    public void throwsWhenFindingTextOnBaseScreen() {
+        assertThrows(NoSuchElementException.class, () -> contentOutOfView.findHiddenText());
+    }
+
+    @BeforeMethod(alwaysRun = true)
+    @Override
+    protected void setViewBeforeMethod() {
+        view = new ContentOutOfView(driver);
+        contentOutOfView = (ContentOutOfView) view;
+    }
+
+    @Override
+    protected String getTitle() {
+        return "Content Out of View";
+    }
+}
