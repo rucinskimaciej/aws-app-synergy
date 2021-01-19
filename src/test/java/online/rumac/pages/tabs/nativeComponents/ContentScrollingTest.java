@@ -1,7 +1,6 @@
-package online.rumac.pages.tab.nativeComponents;
+package online.rumac.pages.tabs.nativeComponents;
 
 import com.synergy.core.driver.By;
-import online.rumac.pages.tabs.nativeComponents.ContentScrolling;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
