@@ -88,6 +88,9 @@
             <systemPropertyVariables>
               <propertyName>json.capabilities</propertyName>
               <propertyName>synergy.server.url</propertyName>
+              <propertyName>device.platform</propertyName>
+              <propertyName>device.id</propertyName>
+              <propertyName>app.package</propertyName>
               <buildDirectory>${project.build.directory}</buildDirectory>
             </systemPropertyVariables>
           </configuration>
