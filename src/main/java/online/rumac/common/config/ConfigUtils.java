@@ -5,5 +5,7 @@ public class ConfigUtils {
     private static final String PATH = "src\\test\\resources\\appPackages\\";
     public static final String PLATFORM = System.getProperty("device.platform");
     public static final String DEVICE_ID = System.getProperty("device.id");
-    public static final String APP_PACKAGE = PATH + System.getProperty("app.package");
+    public static final String APP_PACKAGE = PATH + System.getProperty("device.app.package");
+    public static final String APP_NAME = System.getProperty("device.app.name");
+    public static final String LAUNCH_ACTIVITY = APP_NAME + "." + System.getProperty("device.launch.activity");
 }

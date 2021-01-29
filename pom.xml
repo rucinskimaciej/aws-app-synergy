@@ -90,7 +90,9 @@
               <propertyName>synergy.server.url</propertyName>
               <propertyName>device.platform</propertyName>
               <propertyName>device.id</propertyName>
-              <propertyName>app.package</propertyName>
+              <propertyName>device.app.package</propertyName>
+              <propertyName>device.app.name</propertyName>
+              <propertyName>device.launch.activity</propertyName>
               <buildDirectory>${project.build.directory}</buildDirectory>
             </systemPropertyVariables>
           </configuration>
