@@ -3,6 +3,8 @@ package online.rumac.common.util.deviceCapabilitiesInjector;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.synergy.core.driver.DeviceCapabilities;
+import online.rumac.common.config.CapabilitiesConfig;
+import online.rumac.common.exceptions.EmptyCapabilitiesException;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,6 +14,8 @@ public class DeviceCapabilitiesGenerator {
 
     private static DeviceCapabilitiesGenerator instance = getInstance();
     private final ObjectMapper objectMapper;
+    private static final String CAPABILITIES_PROPERTY = "json.capabilities";
+    private static final String PROPERTY_JSON = System.getProperty(CAPABILITIES_PROPERTY);
 
     private DeviceCapabilitiesGenerator() {
         objectMapper = new ObjectMapper();
@@ -41,5 +45,18 @@ public class DeviceCapabilitiesGenerator {
             e.printStackTrace();
         }
         throw new IllegalArgumentException("Invalid json path");
+    }
+
+    public static DeviceCapabilities getCaps() {
+        if (!PROPERTY_JSON.isEmpty()) return fromJson(getJsonCapabilitiesFileName());
+        else return new CapabilitiesConfig().getDeviceCapabilities();
+    }
+
+    private static String getJsonCapabilitiesFileName() {
+        try {
+            return System.getProperty(CAPABILITIES_PROPERTY);
+        } catch (IllegalArgumentException e) {
+            throw new EmptyCapabilitiesException();
+        }
     }
 }

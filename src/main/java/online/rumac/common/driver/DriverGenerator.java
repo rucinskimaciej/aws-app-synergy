@@ -4,19 +4,17 @@ import com.synergy.core.driver.DeviceCapabilities;
 import com.synergy.core.driver.mobile.MobileDriver;
 import com.synergy.core.driver.mobile.android.AndroidDriver;
 import com.synergy.core.driver.mobile.ios.IOSDriver;
-import online.rumac.common.exceptions.EmptyCapabilitiesException;
 import online.rumac.common.util.deviceCapabilitiesInjector.DeviceCapabilitiesGenerator;
 
 import static online.rumac.common.util.platformIdentifier.PlatformIdentifier.*;
 
 public final class DriverGenerator {
 
-    private static final String CAPABILITIES_PROPERTY = "json.capabilities";
     public static final String SERVER_URL_PROPERTY = "synergy.server.url";
     public static final String DEFAULT_SYNERGY_SERVER = "http://127.0.0.1:7777";
 
     public static MobileDriver generate() {
-        DeviceCapabilities caps = DeviceCapabilitiesGenerator.fromJson(getJsonCapabilitiesFileName());
+        DeviceCapabilities caps = DeviceCapabilitiesGenerator.getCaps();
         String server = getServer();
         return getPlatformSpecificDriver(server, caps);
     }
@@ -32,13 +30,5 @@ public final class DriverGenerator {
 
     private static String getServer() {
         return System.getProperty(SERVER_URL_PROPERTY, DEFAULT_SYNERGY_SERVER);
-    }
-
-    private static String getJsonCapabilitiesFileName() {
-        try {
-            return System.getProperty(CAPABILITIES_PROPERTY);
-        } catch (IllegalArgumentException e) {
-            throw new EmptyCapabilitiesException();
-        }
     }
 }
