@@ -6,4 +6,5 @@
 /src/test/resources/screenshots
 /src/test/java/online/rumac/internalApiTests
 /allure-results
+/src/test/resources/appPackages
 *.iml
