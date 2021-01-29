@@ -6,10 +6,6 @@ public class CapabilitiesConfig {
 
     private final DeviceCapabilities caps;
 
-    public CapabilitiesConfig(DeviceCapabilities caps) {
-        this.caps = caps;
-    }
-
     public CapabilitiesConfig() {
         this.caps = new DeviceCapabilities();
     }
@@ -32,7 +28,7 @@ public class CapabilitiesConfig {
         setAppPackage();
     }
 
-    private DeviceCapabilities getDeviceCapabilities() {
+    public DeviceCapabilities getDeviceCapabilities() {
         setCaps();
         return caps;
     }
