@@ -5,49 +5,22 @@ import com.synergy.core.driver.DeviceCapabilities;
 public class CapabilitiesConfig {
 
     private final DeviceCapabilities caps;
-    public final ConfigUtils config;
+    private static CapabilitiesConfig instance;
 
-    public CapabilitiesConfig() {
+    private CapabilitiesConfig() {
         this.caps = new DeviceCapabilities();
-        this.config = new ConfigUtils();
-    }
-
-    private void setDeviceType() {
-        caps.addCapability("Platform", config.PLATFORM);
-    }
-
-    private void setDeviceId() {
-        caps.addCapability("DeviceID", config.DEVICE_ID);
-    }
-
-    private void setAppPackage() {
-        caps.addCapability("AppPackage", config.APP_PACKAGE);
-    }
-
-    private void setAppName() {
-        caps.addCapability("App", config.APP_NAME);
-    }
-
-    private void setLaunchActivity() {
-        caps.addCapability("LaunchActivity", config.LAUNCH_ACTIVITY);
-    }
-
-    private void setUnlockStrategy() {
-        if ("true".equalsIgnoreCase(System.getProperty("device.unlock")))
-            caps.addCapability("UnlockStrategy", config.UNLOCK_STRATEGY);
-    }
-
-    private void setCaps() {
-        setDeviceType();
-        setDeviceId();
-        setAppPackage();
-        setAppName();
-        setLaunchActivity();
-        setUnlockStrategy();
+        ConfigUtils config = new ConfigUtils();
+        config.getProperties().forEach(caps::addCapability);
     }
 
     public DeviceCapabilities getDeviceCapabilities() {
-        setCaps();
         return caps;
+    }
+
+    public static CapabilitiesConfig getInstance() {
+        if (instance == null) {
+            instance = new CapabilitiesConfig();
+        }
+        return instance;
     }
 }

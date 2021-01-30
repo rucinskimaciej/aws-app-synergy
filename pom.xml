@@ -88,10 +88,9 @@
             <systemPropertyVariables>
               <propertyName>json.capabilities</propertyName>
               <propertyName>synergy.server.url</propertyName>
-              <propertyName>device.platform</propertyName>
-              <propertyName>device.id</propertyName>
-              <propertyName>device.unlock</propertyName>
-              <propertyName>app.details.json</propertyName>
+              <propertyName>json.deviceInfo</propertyName>
+              <propertyName>json.appInfo</propertyName>
+              <propertyName>unlock.strategy</propertyName>
               <buildDirectory>${project.build.directory}</buildDirectory>
             </systemPropertyVariables>
           </configuration>

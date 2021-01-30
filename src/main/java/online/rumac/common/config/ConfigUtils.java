@@ -1,24 +1,40 @@
 package online.rumac.common.config;
 
-import online.rumac.common.appDetails.AppDetails;
-import online.rumac.common.util.Platform;
+import online.rumac.common.details.Details;
+import online.rumac.common.details.appDetails.AppDetails;
+import online.rumac.common.details.deviceDetails.DeviceDetails;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Properties;
 
 public class ConfigUtils {
 
-    public final String PLATFORM;
-    public final String DEVICE_ID;
-    public final String APP_PACKAGE;
-    public final String APP_NAME;
-    public final String LAUNCH_ACTIVITY;
-    public final String UNLOCK_STRATEGY;
+    private final Map<String, String> properties;
+    private final String PLATFORM;
 
     public ConfigUtils() {
-        this.PLATFORM = System.getProperty("device.platform");
-        AppDetails appDetails = new AppDetails(Platform.valueOf(PLATFORM.toUpperCase()));
-        this.DEVICE_ID = System.getProperty("device.id");
-        this.APP_PACKAGE = appDetails.APP_PACKAGE;
-        this.APP_NAME = appDetails.APP_NAME;
-        this.LAUNCH_ACTIVITY = appDetails.LAUNCH_ACTIVITY;
-        this.UNLOCK_STRATEGY = appDetails.UNLOCK_STRATEGY;
+        properties = new HashMap<>();
+        setDeviceProperties();
+        PLATFORM = properties.get("Platform");
+        setAppProperties();
+    }
+
+    public Map<String, String> getProperties() {
+        return properties;
+    }
+
+    private void setDeviceProperties() {
+        Details device = new DeviceDetails();
+        properties.put("Platform", device.getDetails().get("Platform"));
+        properties.put("DeviceId", device.getDetails().get("DeviceId"));
+        properties.put("UnlockStrategy", device.getDetails().get("UnlockStrategy"));
+    }
+
+    private void setAppProperties() {
+        Details app = new AppDetails(PLATFORM);
+        properties.put("AppPackage", app.getDetails().get("AppPackage"));
+        properties.put("AppName", app.getDetails().get("AppName"));
+        properties.put("LaunchActivity", app.getDetails().get("LaunchActivity"));
     }
 }
