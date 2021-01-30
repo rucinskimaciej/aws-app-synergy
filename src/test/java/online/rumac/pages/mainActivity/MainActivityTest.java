@@ -16,7 +16,7 @@ public class MainActivityTest extends BaseSetup {
         if (driver instanceof IOSDriver) info = ((IOSDriver) driver).info().getDeviceInfo().getAppVersion();
 
         String log;
-        if (info != null && !info.isEmpty()) log = "App openned succesfully";
+        if (info != null && !info.isEmpty()) log = "App opened successfully";
         else log = "Could not open app";
         Log.onTerminal(log);
     }
