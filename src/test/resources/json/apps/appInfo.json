@@ -1,0 +1,12 @@
+{
+  "Android" : {
+    "AppPackage": "src/test/resources/appPackages/<appFileName>",
+    "App": "",
+    "LaunchActivity": ""
+  },
+  "IOS" : {
+    "AppPackage": "src/test/resources/appPackages/<appFileName>",
+    "App": "",
+    "LaunchActivity": ""
+  }
+}
