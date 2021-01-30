@@ -6,7 +6,6 @@ import online.rumac.common.details.deviceDetails.DeviceDetails;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Properties;
 
 public class ConfigUtils {
 
@@ -26,15 +25,11 @@ public class ConfigUtils {
 
     private void setDeviceProperties() {
         Details device = new DeviceDetails();
-        properties.put("Platform", device.getDetails().get("Platform"));
-        properties.put("DeviceId", device.getDetails().get("DeviceId"));
-        properties.put("UnlockStrategy", device.getDetails().get("UnlockStrategy"));
+        properties.putAll(device.getDetails());
     }
 
     private void setAppProperties() {
         Details app = new AppDetails(PLATFORM);
-        properties.put("AppPackage", app.getDetails().get("AppPackage"));
-        properties.put("AppName", app.getDetails().get("AppName"));
-        properties.put("LaunchActivity", app.getDetails().get("LaunchActivity"));
+        properties.putAll(app.getDetails());
     }
 }
