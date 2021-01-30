@@ -7,4 +7,5 @@
 /src/test/java/online/rumac/internalApiTests
 /allure-results
 /src/test/resources/appPackages
+/src/test/resources/json
 *.iml
