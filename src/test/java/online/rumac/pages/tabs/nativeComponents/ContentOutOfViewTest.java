@@ -10,7 +10,7 @@ public class ContentOutOfViewTest extends NativeComponentsViewTest {
 
     private ContentOutOfView contentOutOfView;
 
-    @Test(groups = "undone")
+    @Test(groups = "done")
     public void findsTextWhenScrollsToBottom() {
         assertEquals(contentOutOfView.scrollAndFindHiddenText(), "This is hidden text");
     }

@@ -48,7 +48,7 @@ public class DeviceCapabilitiesGenerator {
     }
 
     public static DeviceCapabilities getCaps() {
-        if (!PROPERTY_JSON.isEmpty()) return fromJson(getJsonCapabilitiesFileName());
+        if (PROPERTY_JSON != null) return fromJson(getJsonCapabilitiesFileName());
         else return new CapabilitiesConfig().getDeviceCapabilities();
     }
 

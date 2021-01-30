@@ -2,34 +2,34 @@ package online.rumac.common.config;
 
 import com.synergy.core.driver.DeviceCapabilities;
 
-import static online.rumac.common.config.ConfigUtils.*;
-
 public class CapabilitiesConfig {
 
     private final DeviceCapabilities caps;
+    public final ConfigUtils config;
 
     public CapabilitiesConfig() {
         this.caps = new DeviceCapabilities();
+        this.config = new ConfigUtils();
     }
 
     private void setDeviceType() {
-        caps.addCapability("Platform", PLATFORM);
+        caps.addCapability("Platform", config.PLATFORM);
     }
 
     private void setDeviceId() {
-        caps.addCapability("DeviceID", DEVICE_ID);
+        caps.addCapability("DeviceID", config.DEVICE_ID);
     }
 
     private void setAppPackage() {
-        caps.addCapability("AppPackage", APP_PACKAGE);
+        caps.addCapability("AppPackage", config.APP_PACKAGE);
     }
 
     private void setAppName() {
-        caps.addCapability("App", APP_NAME);
+        caps.addCapability("App", config.APP_NAME);
     }
 
     private void setLaunchActivity() {
-        caps.addCapability("LaunchActivity", LAUNCH_ACTIVITY);
+        caps.addCapability("LaunchActivity", config.LAUNCH_ACTIVITY);
     }
 
     private void setCaps() {
