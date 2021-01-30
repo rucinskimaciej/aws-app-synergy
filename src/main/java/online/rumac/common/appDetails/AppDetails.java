@@ -16,6 +16,7 @@ public class AppDetails {
     public final String APP_NAME;
     public final String APP_PACKAGE;
     public final String LAUNCH_ACTIVITY;
+    public final String UNLOCK_STRATEGY;
     private static final String fileName = System.getProperty("app.details.json");
     private static final String directory = "src\\test\\resources\\capabilitiesJson\\";
     private static final String filePath = directory + fileName + ".json";
@@ -26,6 +27,11 @@ public class AppDetails {
         this.APP_NAME = extractAppName();
         this.APP_PACKAGE = extractAppPackage();
         this.LAUNCH_ACTIVITY = extractLaunchActivity();
+        this.UNLOCK_STRATEGY = extractUnlockStrategy();
+    }
+
+    private String extractUnlockStrategy() {
+        return json.get("unlockStrategy").get(platform);
     }
 
     private String extractAppName() throws IllegalArgumentException {
@@ -41,7 +47,7 @@ public class AppDetails {
     }
 
     private void throwExceptionIfEmpty(String output, String method) throws IllegalArgumentException {
-        if (output == null) throw new IllegalArgumentException(
+        if (output.isEmpty()) throw new IllegalArgumentException(
                 String.format("%s in %s.json is required while was found empty.", method, fileName));
     }
 

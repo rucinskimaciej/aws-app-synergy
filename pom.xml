@@ -90,6 +90,7 @@
               <propertyName>synergy.server.url</propertyName>
               <propertyName>device.platform</propertyName>
               <propertyName>device.id</propertyName>
+              <propertyName>device.unlock</propertyName>
               <propertyName>app.details.json</propertyName>
               <buildDirectory>${project.build.directory}</buildDirectory>
             </systemPropertyVariables>

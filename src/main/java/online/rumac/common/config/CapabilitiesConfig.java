@@ -32,12 +32,18 @@ public class CapabilitiesConfig {
         caps.addCapability("LaunchActivity", config.LAUNCH_ACTIVITY);
     }
 
+    private void setUnlockStrategy() {
+        if ("true".equalsIgnoreCase(System.getProperty("device.unlock")))
+            caps.addCapability("UnlockStrategy", config.UNLOCK_STRATEGY);
+    }
+
     private void setCaps() {
         setDeviceType();
         setDeviceId();
         setAppPackage();
         setAppName();
         setLaunchActivity();
+        setUnlockStrategy();
     }
 
     public DeviceCapabilities getDeviceCapabilities() {
