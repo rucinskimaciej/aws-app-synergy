@@ -48,8 +48,9 @@ public class DeviceCapabilitiesGenerator {
     }
 
     public static DeviceCapabilities getCaps() {
+        if (System.getProperty("json.deviceInfo") != null && System.getProperty("json.appInfo") != null) return new CapabilitiesConfig().getDeviceCapabilities();
         if (PROPERTY_JSON != null) return fromJson(getJsonCapabilitiesFileName());
-        else return new CapabilitiesConfig().getDeviceCapabilities();
+        else throw new IllegalArgumentException("Insufficient capabilities provided. See README for more details");
     }
 
     private static String getJsonCapabilitiesFileName() {
