@@ -6,7 +6,7 @@ public abstract class DriverManager {
 
     protected final MobileDriver driver;
 
-    protected DriverManager(MobileDriver driver) {
+    public DriverManager(MobileDriver driver) {
         this.driver = driver;
     }
 
