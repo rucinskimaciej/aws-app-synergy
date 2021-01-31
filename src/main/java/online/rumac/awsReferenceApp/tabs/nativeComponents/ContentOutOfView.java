@@ -6,10 +6,6 @@ import com.synergy.core.exceptions.NoSuchElementException;
 
 public class ContentOutOfView extends NativeComponentsView {
 
-    protected ContentOutOfView(MobileDriver driver) {
-        super(driver);
-    }
-
     @Override
     protected void goToView() {
         scroll().right(4);

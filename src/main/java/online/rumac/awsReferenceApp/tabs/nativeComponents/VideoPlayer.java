@@ -7,8 +7,7 @@ public class VideoPlayer extends NativeComponentsView {
 
     private MobileElement videoElement;
 
-    public VideoPlayer(MobileDriver driver) {
-        super(driver);
+    public VideoPlayer() {
         String idLocator = "com.amazonaws.devicefarm.android.referenceapp:id/native_video_player";
         videoElement = supplyElementBy("ID", idLocator);
     }
