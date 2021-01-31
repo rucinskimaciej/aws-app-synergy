@@ -15,9 +15,6 @@ public abstract class NativeComponentsViewTest extends BaseSetup {
         this.title = getTitle();
     }
 
-    @BeforeMethod(alwaysRun = true)
-    protected abstract void setViewBeforeMethod();
-
     protected abstract String getTitle();
 
     @Test(groups = "done")
