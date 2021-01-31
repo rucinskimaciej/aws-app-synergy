@@ -1,6 +1,7 @@
 package online.rumac.awsReferenceApp.tabs.web;
 
 import com.synergy.core.driver.By;
+import online.rumac.common.driver.DriverManager;
 import online.rumac.common.logger.Log;
 import online.rumac.common.BaseSetup;
 import org.testng.annotations.BeforeMethod;
@@ -9,11 +10,6 @@ import org.testng.annotations.Test;
 public class WebViewViewTest extends BaseSetup {
 
     private WebView webView;
-
-    @BeforeMethod
-    void setup() {
-        webView = new WebView(driver);
-    }
 
     @Test(groups = "done")
     void websiteInputTest() throws InterruptedException {
@@ -27,7 +23,6 @@ public class WebViewViewTest extends BaseSetup {
         Thread.sleep(3000); // to see the output
     }
 
-
     @Test(groups = "broken")
     void searchBarInputTest() throws InterruptedException {
 //        System.err.println(driver.screen().getContextHandles()); // <- returns only NATIVE_APP context
@@ -40,5 +35,11 @@ public class WebViewViewTest extends BaseSetup {
 
         Log.onTerminal("Send keys: " + sendKeys);
         Thread.sleep(3000); // to see the output
+    }
+
+    @Override
+    protected DriverManager getViewHolder() {
+        webView = new WebView();
+        return webView;
     }
 }
