@@ -1,6 +1,5 @@
 package online.rumac.awsReferenceApp.tabs.nativeComponents;
 
-import online.rumac.common.driver.DriverManager;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
@@ -15,10 +14,9 @@ public class CameraTest extends NativeComponentsViewTest {
     }
 
     @Override
-    protected DriverManager getViewHolder() {
+    protected NativeComponentsView getNativeComponentsView() {
         cameraView = new Camera();
-        return cameraView;
-    }
+        return cameraView;    }
 
     @Test(groups = "done")
     public void testIsDisplayed() {

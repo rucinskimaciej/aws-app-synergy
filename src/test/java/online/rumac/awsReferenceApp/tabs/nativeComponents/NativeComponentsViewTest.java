@@ -1,6 +1,7 @@
 package online.rumac.awsReferenceApp.tabs.nativeComponents;
 
 import online.rumac.common.BaseSetup;
+import online.rumac.common.driver.DriverManager;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -14,6 +15,14 @@ public abstract class NativeComponentsViewTest extends BaseSetup {
     public NativeComponentsViewTest() {
         this.title = getTitle();
     }
+
+    @Override
+    protected final DriverManager getViewHolder() {
+        view = getNativeComponentsView();
+        return view;
+    }
+
+    protected abstract NativeComponentsView getNativeComponentsView();
 
     protected abstract String getTitle();
 
