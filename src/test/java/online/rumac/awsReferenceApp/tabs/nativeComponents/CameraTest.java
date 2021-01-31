@@ -1,14 +1,24 @@
 package online.rumac.awsReferenceApp.tabs.nativeComponents;
 
-import org.testng.annotations.BeforeMethod;
+import online.rumac.common.driver.DriverManager;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
 public class CameraTest extends NativeComponentsViewTest {
 
-
     private Camera cameraView;
+
+    @Override
+    protected String getTitle() {
+        return "Camera";
+    }
+
+    @Override
+    protected DriverManager getViewHolder() {
+        cameraView = new Camera();
+        return cameraView;
+    }
 
     @Test(groups = "done")
     public void testIsDisplayed() {
@@ -18,17 +28,5 @@ public class CameraTest extends NativeComponentsViewTest {
     @Test(groups = "done")
     public void testIsEnabled() {
         assertTrue(cameraView.isEnabled());
-    }
-
-    @BeforeMethod(alwaysRun = true)
-    @Override
-    protected void setViewBeforeMethod() {
-        view = new Camera(driver);
-        cameraView = (Camera) view;
-    }
-
-    @Override
-    protected String getTitle() {
-        return "Camera";
     }
 }
