@@ -9,9 +9,12 @@ import static org.testng.Assert.*;
 
 public class ImageCollectionTest extends NativeComponentsViewTest {
 
+    private ImageCollection imageCollectionView;
+
     @Override
     protected NativeComponentsView getNativeComponentsView() {
-        return new ImageCollection();
+        imageCollectionView = new ImageCollection();
+        return imageCollectionView;
     }
 
     @Override
@@ -21,7 +24,7 @@ public class ImageCollectionTest extends NativeComponentsViewTest {
 
     @Test(groups = "done")
     void findImagesOnScreen() {
-        assertTrue(((ImageCollection) view).imageIsOnScreen(1 + new Random().nextInt(6)));
+        assertTrue(imageCollectionView.imageIsOnScreen(1 + new Random().nextInt(6)));
     }
 
 
