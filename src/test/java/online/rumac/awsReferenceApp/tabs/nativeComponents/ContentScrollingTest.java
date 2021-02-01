@@ -1,6 +1,7 @@
 package online.rumac.awsReferenceApp.tabs.nativeComponents;
 
 import com.synergy.core.driver.By;
+import online.rumac.common.driver.DriverManager;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -9,10 +10,9 @@ import static org.testng.Assert.*;
 
 public class ContentScrollingTest extends NativeComponentsViewTest {
 
-    @BeforeMethod(alwaysRun = true)
     @Override
-    protected void setViewBeforeMethod() {
-        view = new ContentScrolling(driver);
+    protected NativeComponentsView getNativeComponentsView() {
+        return new ContentScrolling();
     }
 
     @Test(groups = "done")
@@ -26,5 +26,4 @@ public class ContentScrollingTest extends NativeComponentsViewTest {
     protected String getTitle() {
         return "Content Scrolling";
     }
-
 }

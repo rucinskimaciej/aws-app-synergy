@@ -6,8 +6,8 @@ public abstract class DriverManager {
 
     protected final MobileDriver driver;
 
-    public DriverManager(MobileDriver driver) {
-        this.driver = driver;
+    public DriverManager() {
+        this.driver = DriverGenerator.generate();
     }
 
     public MobileDriver getDriver() {

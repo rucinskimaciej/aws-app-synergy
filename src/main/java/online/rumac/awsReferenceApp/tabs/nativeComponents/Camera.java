@@ -7,8 +7,7 @@ public class Camera extends NativeComponentsView {
 
     private final MobileElement camera;
 
-    protected Camera(MobileDriver driver) {
-        super(driver);
+    protected Camera() {
         String idLocator = "com.amazonaws.devicefarm.android.referenceapp:id/camera_surface_view";
         camera = supplyElementBy("ID", idLocator);
     }

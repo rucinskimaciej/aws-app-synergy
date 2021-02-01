@@ -6,10 +6,6 @@ import com.synergy.core.exceptions.NoSuchElementException;
 
 public class ImageCollection extends NativeComponentsView {
 
-    public ImageCollection(MobileDriver driver) {
-        super(driver);
-    }
-
     private static final String IMAGE_PATH = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/" +
             "android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support." +
             "v4.widget.DrawerLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4." +

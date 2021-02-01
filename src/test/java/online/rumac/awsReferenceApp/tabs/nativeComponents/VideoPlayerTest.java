@@ -1,6 +1,5 @@
 package online.rumac.awsReferenceApp.tabs.nativeComponents;
 
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
@@ -9,11 +8,10 @@ public class VideoPlayerTest extends NativeComponentsViewTest {
 
     private VideoPlayer videoPlayer;
 
-    @BeforeMethod(alwaysRun = true)
     @Override
-    protected void setViewBeforeMethod() {
-        view = new VideoPlayer(driver);
-        videoPlayer = (VideoPlayer) view;
+    protected NativeComponentsView getNativeComponentsView() {
+        videoPlayer = new VideoPlayer();
+        return videoPlayer;
     }
 
     @Override

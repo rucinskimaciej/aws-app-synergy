@@ -2,7 +2,6 @@ package online.rumac.awsReferenceApp.tabs.web;
 
 import com.synergy.core.driver.By;
 import com.synergy.core.driver.elements.MobileElement;
-import com.synergy.core.driver.mobile.MobileDriver;
 import com.synergy.core.driver.mobile.android.AndroidDriver;
 import online.rumac.common.driver.DriverManager;
 import online.rumac.common.interactions.KeysSender;
@@ -10,10 +9,6 @@ import online.rumac.awsReferenceApp.menu.view.Menu;
 import online.rumac.awsReferenceApp.menu.view.MenuElementsView;
 
 public class WebView extends DriverManager implements KeysSender {
-
-    public WebView(MobileDriver driver) {
-        super(driver);
-    }
 
     @Override
     public void sendKeysTo(By elementLocator, String keys) {
