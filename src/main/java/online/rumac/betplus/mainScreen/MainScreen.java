@@ -2,14 +2,9 @@ package online.rumac.betplus.mainScreen;
 
 import com.synergy.core.driver.By;
 import com.synergy.core.driver.elements.MobileElement;
-import com.synergy.core.driver.mobile.MobileDriver;
 import online.rumac.common.driver.DriverManager;
 
 public class MainScreen extends DriverManager {
-
-    public MainScreen(MobileDriver driver) {
-        super(driver);
-    }
 
     public boolean loadMainScreen() {
         driver.options().setElementTimeout(10000);
