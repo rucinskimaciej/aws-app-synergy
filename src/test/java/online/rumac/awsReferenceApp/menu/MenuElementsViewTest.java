@@ -1,7 +1,5 @@
 package online.rumac.awsReferenceApp.menu;
 
-import com.synergy.core.driver.mobile.MobileDriver;
-import online.rumac.common.driver.DriverGenerator;
 import online.rumac.common.driver.DriverManager;
 import online.rumac.common.logger.Log;
 import online.rumac.common.BaseSetup;
@@ -95,11 +93,6 @@ public class MenuElementsViewTest extends BaseSetup {
 
     @Override
     protected DriverManager getViewHolder() {
-        return new DriverManager() {
-            @Override
-            public MobileDriver getDriver() {
-                return DriverGenerator.generate();
-            }
-        };
+        return new DriverManager() {};
     }
 }
